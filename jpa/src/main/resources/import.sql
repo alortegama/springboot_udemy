@@ -1,20 +1,23 @@
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (1,'Alvaro','Ortega','alortegama@outlook.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (2,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (3,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (4,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (5,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (6,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (7,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (8,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (9,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (10,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (11,'Alvaro','Ortega','alortegama@outlook.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (12,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (13,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (14,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (15,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (16,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (17,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (18,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (19,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
-INSERT INTO Clientes (id,nombre,apellido,email,create_at)  VALUES (20,'Tania','Melero','taniamelero@gmail.com','2016-01-01')
+INSERT INTO clientes (nombre,apellido,email,create_at,foto)  VALUES ('Alvaro','Ortega','alortegama@outlook.com','2016-01-01','');
+INSERT INTO clientes (nombre,apellido,email,create_at,foto)  VALUES ('Eduardo','Melero','taniamelero@gmail.com','2016-01-01','');
+INSERT INTO clientes (nombre,apellido,email,create_at,foto)  VALUES ('Jorge','Pepito','taniamelero@gmail.com','2016-01-01','');
+INSERT INTO clientes (nombre,apellido,email,create_at,foto)  VALUES ('Sonia','Grillo','taniamelero@gmail.com','2016-01-01','');
+)
+
+/* Populate tabla productos */
+INSERT INTO productos (nombre, precio, create_at) VALUES('Panasonic Pantalla LCD', 259990, NOW());
+INSERT INTO productos (nombre, precio, create_at) VALUES('Sony Camara digital DSC-W320B', 123490, NOW());
+INSERT INTO productos (nombre, precio, create_at) VALUES('Apple iPod shuffle', 1499990, NOW());
+INSERT INTO productos (nombre, precio, create_at) VALUES('Sony Notebook Z110', 37990, NOW());
+INSERT INTO productos (nombre, precio, create_at) VALUES('Hewlett Packard Multifuncional F2280', 69990, NOW());
+INSERT INTO productos (nombre, precio, create_at) VALUES('Bianchi Bicicleta Aro 26', 69990, NOW());
+INSERT INTO productos (nombre, precio, create_at) VALUES('Mica Comoda 5 Cajones', 299990, NOW());
+
+INSERT INTO facturas (descripcion,observacion,cliente_id,create_at) VALUES ('Factura equipos de oficina',null,1,NOW());
+INSERT INTO facturas_items (cantidad,factura_id,producto_id) VALUES (1,1,1);
+INSERT INTO facturas_items (cantidad,factura_id,producto_id) VALUES (2,1,4);
+INSERT INTO facturas_items (cantidad,factura_id,producto_id) VALUES (1,1,5);
+INSERT INTO facturas_items (cantidad,factura_id,producto_id) VALUES (1,1,7);
+
+INSERT INTO facturas (descripcion,observacion,cliente_id,create_at) VALUES ('Factura Bicicleta','Alguna nota importante!',1,NOW());
+INSERT INTO facturas_items (cantidad,factura_id,producto_id) VALUES (3,2,6);
