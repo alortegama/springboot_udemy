@@ -1,26 +1,32 @@
 package com.alvaro.udemy.springboot.jpa.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "clientes")
-public class Cliente {
+public class Cliente implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
 	@NotEmpty
 	private String nombre;
+
 	@NotEmpty
 	private String apellido;
+
 	@NotEmpty
 	@Email
 	private String email;
@@ -28,10 +34,12 @@ public class Cliente {
 	@Column(name = "create_at")
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private Date createAt;
 	private String foto;
 
 	@OneToMany(mappedBy = "cliente",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	@JsonManagedReference
 	private List<Factura> facturas;
 
 	public Cliente(){

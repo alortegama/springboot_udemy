@@ -10,7 +10,7 @@
         <div class="card-body">
             <h4 class="card-title"></h4>
 
-            <form th:action="@{/form}" th:object="${cliente}" method="post">
+            <form th:action="@{/form}" th:object="${cliente}" method="post" enctype="multipart/form-data">
 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
